@@ -1,0 +1,19 @@
+services:
+  php:
+    image: poli
+    container_name: poli-container
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+    restart: always
+  db:
+    image: mysql:5.6
+    container_name: my-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: Password321
+      MYSQL_DATABASE: poliklinik_ahmadfadillah
+      MYSQL_USER: fadil
+      MYSQL_PASSWORD: Password321
+    ports:
+      - "3306:3306"
